@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zuume+Regular&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brüksel Fatih Camii - Formulaire d'Adhésion 2025</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; font-weight: 600;
+            font-family: 'Zuume', sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: none;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+        form {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            max-width: 90%;
+            margin: auto;
+        }
+        input, select, button {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .header-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+            body {
+                padding: 10px;
+            }
+            form {
+                max-width: 100%;
+            }
+        }
+    .pay-button {
+    display: block;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="https://drive.google.com/uc?export=download&id=1Eq_jqyJc5gohrMsE92m8_Ih92zXdwOlZ" type="video/mp4">
+    </video>
+    <style>
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    </style>
+    
+    
+    <img src="https://lh3.googleusercontent.com/d/1nrfb_GA-IVy0xG9CwHKXGeMwBOyUD3lq=w500" alt="Brüksel Fatih Camii Logo" class="logo">
+    <h2 style="color: black;">Brüksel Fatih Camii / <span style="color: blue;">Mosquée Fatih de Bruxelles</span></h2>
+    
+
+
+
+    
+    
+
+<h2 style="color: black;">2025 Üyelik Aidatı Formu</h2>
+    <h3 style="color: blue;"><span style="color: blue;">Formulaire de cotisation annuelle 2025</span></h3>
+    <form>
+    <label>Üyelik Türü / <span style="color: blue;">Type d'Adhésion</span> :</label>
+    <select name="type" required>
+        <option value="nouvelle">Yeni Üyelik / Nouvelle Adhésion</option>
+        <option value="renouvellement">Üyelik Yenileme / Renouvellement d'Adhésion</option>
+    </select>
+
+    <label>İsim ve Soyisim / <span style="color: blue;">Nom et Prénom</span> :</label>
+    <input type="text" name="nom" required>
+
+    <label>Doğum Tarihi / <span style="color: blue;">Date de Naissance</span> :</label>
+    <input type="date" name="date_naissance" required>
+
+    <label>Telefon Numarası / <span style="color: blue;">Numéro de Téléphone</span> :</label>
+    <input type="tel" name="telephone" required>
+</form>
+
+<!-- Bouton de paiement en dehors du formulaire -->
+<a href="#" class="pay-button" id="pay-button">Ödeme Yap / <span style="color: blue;"> Payer</span></a>
+
+<script>
+    document.getElementById('pay-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        var form = document.querySelector('form');
+        var valid = true;
+        var inputs = form.querySelectorAll('input, select');
+        
+        inputs.forEach(function(input) {
+            if (!input.value) {
+                valid = false;
+                input.style.border = '2px solid red';
+            } else {
+                input.style.border = '1px solid #ccc';
+            }
+        });
+        
+        if (valid) {
+            window.location.href = 'https://payment-links.mollie.com/payment/hp2F35R9fxcw77w6tmEjz';
+        } else {
+            alert('Veuillez remplir tous les champs avant de procéder au paiement.');
+        }
+    });
+</script>
+</body>
+</html>
